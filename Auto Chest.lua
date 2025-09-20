@@ -90,7 +90,7 @@ toggleButton.Position = UDim2.new(0, 15, 0, 70)
 toggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 toggleButton.BackgroundTransparency = 0.1
 toggleButton.BorderSizePixel = 0
-toggleButton.Text = "Khởi Chạy👽 "
+toggleButton.image = "rbxassetid://101277172387327"
 toggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 toggleButton.TextScaled = true
 toggleButton.Font = Enum.Font.GothamSemibold
@@ -104,7 +104,7 @@ local isOpen = false
 toggleButton.MouseButton1Click:Connect(function()
 	isOpen = not isOpen
 	background.Visible = isOpen
-	toggleButton.Text = isOpen and "Close" or "Open"
+	toggleButton.image = "rbxassetid://101277172387327"
 end)
 
 local seconds = 0
@@ -206,3 +206,13 @@ LocalPlayer.CharacterAdded:Connect(function()
 end)
 
 startFarm()
+
+while true do
+    task.wait(10)
+    if not hasChest() then
+        for _, player in pairs(Players:GetPlayers()) do
+            hopServer(player)
+        end
+        break 
+    end
+end
