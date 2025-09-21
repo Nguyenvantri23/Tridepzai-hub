@@ -1,13 +1,3 @@
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-
-local player = Players.LocalPlayer
-
-Notification.new("<Color=Yellow>Welcome to TriDepZai Hub,<Color=/>"):Display()
-task.wait(1)
-Notification.new("<Color=Red>Script By Tr Nguyn,<Color=/>"):Display()
-task.wait(1)
-
 if not game:IsLoaded() then
     game.Loaded:Wait()
 end
@@ -1369,7 +1359,7 @@ print("--[[Loaded UI]]--")
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 Window = Fluent:CreateWindow({
     Title = "TriDepZai Hub [Premium]",
-    SubTitle = "By Tr Nguyn",
+    SubTitle = "By Trí Nguyễn",
     TabWidth = 155,
     Size = UDim2.fromOffset(500, 350),
     Acrylic = false, 
@@ -1707,7 +1697,7 @@ spawn(function()
         while true do
             wait(1)            
             local mirageIslandExists = game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') ~= nil
-            local currentStatus = mirageIslandExists and '' or ''
+            local currentStatus = mirageIslandExists and '✅️' or '❌️'
             if currentStatus ~= previousStatus then
                 Miragecheck:SetDesc('Status: ' .. currentStatus)
                 previousStatus = currentStatus
@@ -1722,7 +1712,7 @@ Kitsunecheck = Server:AddParagraph({
 spawn(function()
     local previousStatus = ""
     while task.wait(1) do
-        local currentStatus = game:GetService("Workspace").Map:FindFirstChild("KitsuneIsland") and '' or ''
+        local currentStatus = game:GetService("Workspace").Map:FindFirstChild("KitsuneIsland") and '✅️' or '❌️'
         if currentStatus ~= previousStatus then
             Kitsunecheck:SetDesc('Status: ' .. currentStatus)
             previousStatus = currentStatus
@@ -1736,7 +1726,7 @@ CPrehistoriccheck = Server:AddParagraph({
 task.spawn(function()
     local previousStatus = ""
     while task.wait(1) do
-        local currentStatus = game.Workspace._WorldOrigin.Locations:FindFirstChild("Prehistoric Island") and '' or ''
+        local currentStatus = game.Workspace._WorldOrigin.Locations:FindFirstChild("Prehistoric Island") and '✅️' or '❌️'
         if currentStatus ~= previousStatus then
             CPrehistoriccheck:SetDesc("Status: " .. currentStatus)
             previousStatus = currentStatus
@@ -1750,7 +1740,7 @@ FrozenIsland = Server:AddParagraph({
 spawn(function()
     local previousStatus = ""
     while wait(1) do
-        local currentStatus = game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') and '' or ''
+        local currentStatus = game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') and '✅️' or '❌️'
         if currentStatus ~= previousStatus then
             FrozenIsland:SetDesc('Status: ' .. currentStatus)
             previousStatus = currentStatus
@@ -1764,7 +1754,7 @@ MobCakePrince = Server:AddParagraph({
 spawn(function()
     while wait(1) do
         local cakePrince = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")
-        local killStatus = "Cake Prince: "
+        local killStatus = "Cake Prince: ✅️"
         if string.len(cakePrince) >= 86 then
             local killCount = string.sub(cakePrince, 39, 41)
             killStatus = "Kill: " .. killCount
@@ -1779,7 +1769,7 @@ CheckRip = Server:AddParagraph({
 spawn(function()
     local previousStatus = ""
     while wait(1) do
-        local currentStatus = game:GetService("ReplicatedStorage"):FindFirstChild("rip_indra True Form") or game:GetService("Workspace").Enemies:FindFirstChild("rip_indra") and '' or ''
+        local currentStatus = game:GetService("ReplicatedStorage"):FindFirstChild("rip_indra True Form") or game:GetService("Workspace").Enemies:FindFirstChild("rip_indra") and '✅️' or '❌️'
         if currentStatus ~= previousStatus then
             CheckRip:SetDesc("Status: " .. currentStatus)
             previousStatus = currentStatus
@@ -1793,7 +1783,7 @@ CheckDoughKing = Server:AddParagraph({
 spawn(function()
     local previousStatus = ""
     while wait(1) do
-        local currentStatus = game:GetService("ReplicatedStorage"):FindFirstChild("Dough King") or game:GetService("Workspace").Enemies:FindFirstChild("Dough King") and '' or ''
+        local currentStatus = game:GetService("ReplicatedStorage"):FindFirstChild("Dough King") or game:GetService("Workspace").Enemies:FindFirstChild("Dough King") and '✅️' or '❌️'
         if currentStatus ~= previousStatus then
             CheckDoughKing:SetDesc("Status: " .. currentStatus)
             previousStatus = currentStatus
@@ -1807,7 +1797,7 @@ EliteHunter = Server:AddParagraph({
 spawn(function()
     local previousStatus = ""
     while wait(1) do
-        local currentStatus = (game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre") or game:GetService("Workspace").Enemies:FindFirstChild("Urban")) and '' or ''
+        local currentStatus = (game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre") or game:GetService("Workspace").Enemies:FindFirstChild("Urban")) and '✅️' or '❌️'
         local progress = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress")
         if currentStatus ~= previousStatus then
             EliteHunter:SetDesc("Status: " .. currentStatus .. " | Killed: " .. progress)
@@ -5450,7 +5440,7 @@ function AddEsp(Name, Parent)
     TextLabel.Font = Enum.Font.GothamBold
     TextLabel.TextColor3 = Color3.new(1, 1, 1)
     TextLabel.TextSize = 15
-    TextLabel.Text = "YOUR BOAT IS HERE$B"-(B"
+    TextLabel.Text = "YOUR BOAT IS HERE↓"
     return BillboardGui
 end
 spawn(function()
@@ -6903,7 +6893,7 @@ spawn(function()
             return game.ReplicatedStorage.Remotes.CommF_:InvokeServer("templedoorcheck")
         end)
         if success then
-            local currentStatus = result and "" or ""
+            local currentStatus = result and "✅" or "❌"
             if currentStatus ~= previousStatus then
                 Pullever:SetDesc("Status: " .. currentStatus)
                 previousStatus = currentStatus
@@ -8161,7 +8151,7 @@ TextButton.MouseButton1Down:Connect(function()
 
     VirtualInputManager:SendKeyEvent(true, "LeftControl", false, game)
 end)
---\\ VIP
+--\\ ♡VIP♡
 ----------------------------------------------------------------------------------------------------
 print("--[[Hop Server If You Meet Game Admin]]--")
 local targetPlayers = {
